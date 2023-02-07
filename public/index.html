@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Desafio 6</title>
+</head>
+
+<body class="bg-dark">
+    <header class="title">
+        <h1 class="text-light text-center mt-2 mb-5">Desafio 6</h1>
+    </header>
+    <main>
+        <section class="container-fluid d-flex messages h-50 border-light">
+            <form id="messageForm" class="d-flex flex-column w-50" autocomplete="off">
+                <input type="text" autocomplete="false" name="hidden" style="display:none">
+                <select class="bg-dark text-light border-light m-1 rounded" id="name" name="name" required>
+                    <option value="matias">Matias</option>
+                    <option value="raul">Raul</option>
+                    <option value="jair">Jair</option>
+                    <option value="agustin">Agustin</option>
+                </select>
+                <input class="bg-dark text-light border-light m-1 rounded" type="text" placeholder="Su mensaje ..."
+                    name="message" id="message" required>
+                <button class="btn btn-outline-light">Enviar</button>
+            </form>
+            <aside class="messages border d-flex flex-column w-50">
+                <div class="d-flex flex-column" id="messageDisplay">
+                </div>
+            </aside>
+        </section>
+        <section class="container-fluid d-flex justify-content-around align-items-center products mt-4 border-light">
+            <div class="w-25">
+                <h4 class="text-light text-center">Ingrese los datos del producto</h4>
+                <form id="newProduct" autocomplete="off">
+                    <input type="text" autocomplete="false" name="hidden" style="display:none">
+                    <div class="form-group">
+                        <label for="id"><b class="text-light">ID</b></label>
+                        <input id="ID" class="form-control bg-dark text-light" type="number" name="id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name"><b class="text-light">Name</b></label>
+                        <input id="NAME" class="form-control bg-dark text-light" type="text" name="NAME" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price"><b class="text-light">Price</b></label>
+                        <input id="price" class="form-control bg-dark text-light" type="number" name="price" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="src"><b class="text-light">SRC</b></label>
+                        <input id="src" class="form-control bg-dark text-light" type="text" name="src" required>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-outline-light mt-3 mb-5">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="border" id="productos">
+                <!-- Productos -->
+            </div>
+        </section>
+    </main>
+    <!-- Socket and main.js launch -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
